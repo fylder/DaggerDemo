@@ -15,12 +15,12 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  */
 public class RetrofitClient {
 
-    private static final String baseUrl = "http://school.wojia99.com/public/";
+    private static final String baseUrl = "http://fylder.me:8080/photo/";
 
     /**
      * 获取一个Api Service
      */
-    public static <T> T getInstance(final Class<T> service) {
+    public <T> T getInstance(final Class<T> service) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())   //RxJava回调
@@ -38,7 +38,7 @@ public class RetrofitClient {
      * @param listener okhttp拦截器
      * @return service
      */
-    public static <T> T getInstanceDown(final Class<T> service, DownloadListener listener) {
+    public <T> T getInstanceDown(final Class<T> service, DownloadListener listener) {
 
         OkHttpClient okHttpClient = new OkHttpClient()
                 .newBuilder()
@@ -63,7 +63,7 @@ public class RetrofitClient {
      * @param listener okhttp拦截器
      * @return service
      */
-    public static <T> T getInstanceUpload(final Class<T> service, UploadListener listener) {
+    public <T> T getInstanceUpload(final Class<T> service, UploadListener listener) {
 
         OkHttpClient okHttpClient = new OkHttpClient()
                 .newBuilder()

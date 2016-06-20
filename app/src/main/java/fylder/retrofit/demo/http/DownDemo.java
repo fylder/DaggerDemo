@@ -18,13 +18,14 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
+ * 下载示例
  * Created by 剑指锁妖塔 on 2016/3/31.
  */
 public class DownDemo {
 
     public static Observable<Boolean> downloadFile(final String path, DownloadListener listener) {
 
-        return RetrofitClient.getInstanceDown(Api.class, listener).download()
+        return new RetrofitClient().getInstanceDown(Api.class, listener).download()
                 .map(r -> writeResponseBodyToDisk(r, path))
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }

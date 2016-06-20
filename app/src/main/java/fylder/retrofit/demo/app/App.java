@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Logger.init("log");
+        Logger.init("log_show");
 
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))

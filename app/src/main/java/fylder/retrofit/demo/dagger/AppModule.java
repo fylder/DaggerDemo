@@ -4,7 +4,7 @@ import android.app.Application;
 
 import dagger.Module;
 import dagger.Provides;
-import fylder.retrofit.demo.model.RetrofitModel;
+import fylder.retrofit.demo.http.RetrofitClient;
 
 /**
  * Created by 剑指锁妖塔 on 2016/4/7.
@@ -27,8 +27,8 @@ public class AppModule {
      * 创建一个Retrofit Service
      */
     @Provides
-    public RetrofitModel provideService() {
-        return new RetrofitModel();
+    public RetrofitClient provideService() {
+        return new RetrofitClient();
     }
 
 

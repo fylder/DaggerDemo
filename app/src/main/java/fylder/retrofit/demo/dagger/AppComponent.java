@@ -3,7 +3,7 @@ package fylder.retrofit.demo.dagger;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import fylder.retrofit.demo.model.RetrofitModel;
+import fylder.retrofit.demo.http.RetrofitClient;
 
 /**
  * Created by 剑指锁妖塔 on 2016/4/7.
@@ -12,5 +12,5 @@ import fylder.retrofit.demo.model.RetrofitModel;
 @Component(modules = AppModule.class)
 public interface AppComponent {
 
-    RetrofitModel getRetrofitModel();
+    RetrofitClient getRetrofitClient();//公开接口
 }

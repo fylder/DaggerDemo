@@ -6,20 +6,22 @@ import android.widget.TextView;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import fylder.retrofit.demo.app.App;
 import fylder.retrofit.demo.dagger.component.DaggerDemoComponent;
 import fylder.retrofit.demo.dagger.module.DemoModule;
-import fylder.retrofit.demo.model.DemoModel;
-import fylder.retrofit.demo.model.RetrofitModel;
-import fylder.retrofit.demo.model.impl.DemoImpl;
+import fylder.retrofit.demo.presenter.DemoPresenter;
+import fylder.retrofit.demo.presenter.impl.DemoViewImpl;
 
-public class DemoActivity extends AppCompatActivity implements DemoImpl {
+public class DemoActivity extends AppCompatActivity implements DemoViewImpl {
 
-    @Bind(R.id.demo_id)
-    TextView pT;
+    @BindView(R.id.demo_id)
+    protected TextView pT;
+
+    @Inject
+    DemoPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,25 +29,19 @@ public class DemoActivity extends AppCompatActivity implements DemoImpl {
         setContentView(R.layout.activity_demo);
         ButterKnife.bind(this);
 
-        DaggerDemoComponent.builder().appComponent(App.getAppComponent()).demoModule(new DemoModule(this)).build().inject(this);
+        DaggerDemoComponent.builder()
+                .appComponent(App.getAppComponent())
+                .demoModule(new DemoModule()).build().inject(this);
+        presenter.setViewImpl(this);
     }
-
-    @Inject
-    RetrofitModel r;
-    @Inject
-    DemoModel demoModel;
 
     /**
      * retrofitTest
      */
     @OnClick(R.id.demo_btn)
     void test() {
-        demoModel.retrofitTest(r);
+        presenter.test();
     }
 
 
-    @Override
-    public void showText(String str) {
-        pT.setText(str);
-    }
 }
