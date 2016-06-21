@@ -2,8 +2,6 @@ package fylder.retrofit.demo.presenter;
 
 import com.orhanobut.logger.Logger;
 
-import javax.inject.Inject;
-
 import fylder.retrofit.demo.http.RetrofitClient;
 import fylder.retrofit.demo.http.server.Api;
 import fylder.retrofit.demo.presenter.impl.DemoViewImpl;
@@ -20,8 +18,7 @@ public class DemoPresenter implements ViewPresenter<DemoViewImpl> {
 
     RetrofitClient client;
 
-    @Inject
-    DemoPresenter(RetrofitClient client) {
+    public DemoPresenter(RetrofitClient client) {
         this.client = client;
     }
 
@@ -36,8 +33,8 @@ public class DemoPresenter implements ViewPresenter<DemoViewImpl> {
                 .subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(s -> {
                     Logger.w(s);
+                    viewImpl.getString(s);
                 }, r -> Logger.e(r.getMessage()));
-
     }
 
 }

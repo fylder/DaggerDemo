@@ -5,4 +5,6 @@ package fylder.retrofit.demo.presenter.impl;
  */
 
 public interface DemoViewImpl {
+
+    void getString(String s);
 }

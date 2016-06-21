@@ -44,4 +44,8 @@ public class DemoActivity extends AppCompatActivity implements DemoViewImpl {
     }
 
 
+    @Override
+    public void getString(String s) {
+        pT.setText(s);
+    }
 }
