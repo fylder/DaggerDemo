@@ -31,5 +31,4 @@ public class AppModule {
         return new RetrofitClient();
     }
 
-
 }

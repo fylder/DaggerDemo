@@ -13,4 +13,5 @@ import fylder.retrofit.demo.http.RetrofitClient;
 public interface AppComponent {
 
     RetrofitClient getRetrofitClient();//公开接口
+
 }
