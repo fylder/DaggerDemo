@@ -5,8 +5,8 @@ import com.orhanobut.logger.Logger;
 import fylder.retrofit.demo.http.RetrofitClient;
 import fylder.retrofit.demo.http.server.Api;
 import fylder.retrofit.demo.presenter.impl.DemoViewImpl;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * demo的业务逻辑

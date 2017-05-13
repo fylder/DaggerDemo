@@ -7,7 +7,7 @@ import fylder.retrofit.demo.http.progress.impl.DownloadListener;
 import fylder.retrofit.demo.http.progress.impl.UploadListener;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
@@ -15,7 +15,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
  */
 public class RetrofitClient {
 
-    private static final String baseUrl = "http://fylder.me:8080/photo/";
+    private static final String baseUrl = "http://www.fylder.me:8080/photo/";
 
     /**
      * 获取一个Api Service
@@ -23,7 +23,7 @@ public class RetrofitClient {
     public <T> T getInstance(final Class<T> service) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())   //RxJava回调
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //RxJava回调
                 .addConverterFactory(new StringConverterFactory())          //解析String 而且必须放在json解析之上
                 .addConverterFactory(JacksonConverterFactory.create())      //Jackson 解析json
                 .build();
@@ -47,7 +47,7 @@ public class RetrofitClient {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())   //RxJava回调
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //RxJava回调
                 .addConverterFactory(new StringConverterFactory())          //解析String 而且必须放在json解析之上
                 .addConverterFactory(JacksonConverterFactory.create())      //Jackson 解析json
                 .client(okHttpClient)
@@ -72,7 +72,7 @@ public class RetrofitClient {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())   //RxJava回调
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //RxJava回调
                 .addConverterFactory(new StringConverterFactory())          //解析String 而且必须放在json解析之上
                 .addConverterFactory(JacksonConverterFactory.create())      //Jackson 解析json
                 .client(okHttpClient)

@@ -18,7 +18,7 @@ import fylder.retrofit.demo.presenter.impl.DemoViewImpl;
 public class DemoActivity extends AppCompatActivity implements DemoViewImpl {
 
     @BindView(R.id.demo_id)
-    protected TextView pT;
+    protected TextView showText;
 
     @Inject
     DemoPresenter presenter;
@@ -46,6 +46,6 @@ public class DemoActivity extends AppCompatActivity implements DemoViewImpl {
 
     @Override
     public void getString(String s) {
-        pT.setText(s);
+        showText.setText(s);
     }
 }

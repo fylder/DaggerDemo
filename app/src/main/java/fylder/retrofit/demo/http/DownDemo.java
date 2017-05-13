@@ -12,10 +12,10 @@ import java.io.OutputStream;
 
 import fylder.retrofit.demo.http.progress.impl.DownloadListener;
 import fylder.retrofit.demo.http.server.Api;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * 下载示例
