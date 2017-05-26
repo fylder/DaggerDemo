@@ -23,12 +23,4 @@ public class AppModule {
         return app;
     }
 
-    /**
-     * 创建一个Retrofit Service
-     */
-    @Provides
-    public RetrofitClient provideService() {
-        return new RetrofitClient();
-    }
-
 }
