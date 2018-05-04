@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DaggerDemo.iml" filepath="$PROJECT_DIR$/DaggerDemo.iml" />
-      <module fileurl="file://H:\AndroidStudioProjects\DaggerDemo\RetrofitDemo.iml" filepath="H:\AndroidStudioProjects\DaggerDemo\RetrofitDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RetrofitDemo.iml" filepath="$PROJECT_DIR$/RetrofitDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
